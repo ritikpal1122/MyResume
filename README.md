@@ -62,7 +62,7 @@ This project is a Resume Creator and ATS Checker application built using modern 
 
 5. Open the application in your browser:
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
 
 ---
