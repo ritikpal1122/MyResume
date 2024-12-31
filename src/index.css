@@ -19,6 +19,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ql-container.ql-snow{
+  border: 0 !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
