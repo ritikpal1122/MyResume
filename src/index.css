@@ -22,7 +22,9 @@
 .ql-container.ql-snow{
   border: 0 !important;
 }
-
+.container{
+  margin: 0 auto;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

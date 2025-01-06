@@ -63,6 +63,7 @@ export default function ATSCheckerPage() {
       setIsLoading(false)
     }
   }
+  
 
   return (
     <div className="container mx-auto py-8">
