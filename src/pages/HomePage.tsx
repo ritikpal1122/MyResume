@@ -20,6 +20,7 @@ export default function HomePage() {
     )
   }
 
+
   const features = [
     {
       icon: FileText,
@@ -117,7 +118,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
-              Craft Your Perfect Tech Resume
+              Craft Your Perfect Tech Resume With Resume Builder
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Build ATS-friendly resumes tailored for the tech industry. Stand out from the crowd and land your dream job with our professional resume builder.
