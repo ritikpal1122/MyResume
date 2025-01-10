@@ -25,6 +25,7 @@ export async function downloadResume(resumeElement: HTMLElement, resumeData: Res
     pdf.save(`${resumeData.personalInfo.firstName}-${resumeData.personalInfo.lastName}-resume.pdf`)
   } catch (error) {
     console.error('Error generating PDF:', error)
+    
   }
 }
 
