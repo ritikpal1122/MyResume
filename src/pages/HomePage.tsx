@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,6 +8,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ArrowRight, Check, FileText, CheckCircle, Sliders, Zap, Github, Twitter, Linkedin } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import RetroGrid from '@/components/ui/retro-grid'
+import { ModeToggle } from '@/components/mode-toggle'
 
 export default function HomePage() {
   const [openItems, setOpenItems] = useState<string[]>([])
@@ -46,23 +48,25 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Alex Johnson",
+      name: "Rahul Patel",
       role: "Senior Software Engineer",
       content: "TechResume Pro helped me land interviews at top tech companies. The ATS-optimized templates are a game-changer!",
       avatar: "/placeholder.svg?height=100&width=100",
     },
+   
     {
-      name: "Sarah Lee",
-      role: "UX Designer",
-      content: "I love how easy it is to customize my resume. It truly helped me showcase my design skills and portfolio.",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      name: "Michael Chen",
+      name: "Michael Kumar",
       role: "Data Scientist",
       content: "The industry-specific keywords feature ensured my resume highlighted my most relevant skills. Highly recommended!",
       avatar: "/placeholder.svg?height=100&width=100",
     },
+    {
+      name: "Ankita Deshpandey",
+      role: "UX Designer",
+      content: "I love how easy it is to customize my resume. It truly helped me showcase my design skills and portfolio.",
+      avatar: "/placeholder.svg?height=100&width=100",
+    },
+    
   ]
 
   const plans = [
@@ -107,10 +111,14 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
+   <RetroGrid/>
       <section className="relative overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 hero-section">
         <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:75px_75px] [mask-image:linear-gradient(to_bottom,white,transparent,transparent)] dark:bg-grid-slate-100/[0.03]" />
         <div className="container relative">
+            <div className='absolute top-0 right-0  px-2'>
+              <ModeToggle/>
+            </div>
+         
           <motion.div
             className="mx-auto max-w-2xl lg:max-w-4xl lg:text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -135,14 +143,15 @@ export default function HomePage() {
               </Button>
             </div>
           </motion.div>
+        
         </div>
       </section>
 
-      {/* Features Section */}
+    
       <section className="py-20 sm:py-32">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-12 text-center">
-            Powerful Features for Tech Professionals
+            Explore Our Features
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
@@ -151,8 +160,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="hover:shadow-lg transition-shadow duration-300 hover:scale-105  dark:hover:shadow-slate-700 dark:hover:shadow-md"
               >
-                <Card>
+                <Card className="shadow-md dark:shadow-slate-700 dark:shadow-md">
                   <CardHeader>
                     <feature.icon className="h-10 w-10 text-primary" />
                     <CardTitle>{feature.title}</CardTitle>
@@ -181,7 +191,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card>
+                <Card className="hover:shadow-lg  hover:scale-105 transition-transform duration-300 dark:hover:shadow-slate-700 dark:hover:shadow-md">
                   <CardHeader>
                     <Avatar className="h-12 w-12">
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
@@ -200,7 +210,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+
       <section className="py-20 sm:py-32">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-12 text-center">
